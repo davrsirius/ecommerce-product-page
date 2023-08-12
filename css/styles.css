@@ -176,9 +176,59 @@ select:-webkit-autofill:focus {
   background-color: var(--accent-color);
 }
 
+
+/* SHOPPING CART */
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 256px;
+  border-radius: 10px;
+  background: #FFF;
+}
+
+.shopping-cart--modal {
+  box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.50);
+}
+
+.shopping-cart__header {
+  padding: 24px 24px 27px;
+  border-bottom: 1px solid var(--divider-bg);
+}
+
+.shopping-cart__title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-dark);
+}
+
+.shopping-cart_inner {
+  flex-grow: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.shopping-cart__empty {
+  display: none;
+}
+
+.shopping-cart--empty .shopping-cart__empty {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+
+}
+
+
+/* ********************************************* */
+
 /* SITE-HEADER */
 
 .site-header__container {
+  position: relative;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--divider-bg);
@@ -200,6 +250,7 @@ select:-webkit-autofill:focus {
   margin-left: 24px;
   margin-right: 46px;
 }
+
 .site-header__cart-link {
   position: relative;
   display: flex;
@@ -235,16 +286,17 @@ select:-webkit-autofill:focus {
   line-height: normal;
 }
 
+.site-header__cart--empty .site-header__product-count {
+  display: none;
+}
 
 /* SITE HEADER PROFILE WRAPPER  */
 
-.site-header__profile-wrapper {
-  
-}
+.site-header__profile-wrapper {}
 
 .site-header__profile-link {
   display: flex;
-  border-radius: 50%; 
+  border-radius: 50%;
   border: 2px solid transparent;
   overflow: hidden;
 }
@@ -252,11 +304,25 @@ select:-webkit-autofill:focus {
 .site-header__profile-link:hover {
   border-color: var(--accent-color);
 }
+
 .site-header__profile-avatar {
   object-fit: cover;
   width: 50px;
   height: 50px;
 }
+
+
+/* SITE-HEADER__CART-MODAL */
+
+.site-header__cart-modal {
+  position: absolute;
+  right: -76px;
+  top: 94px;
+  width: 360px;
+  /* display: none; */
+}
+
+
 
 
 
