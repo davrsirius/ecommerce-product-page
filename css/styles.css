@@ -15,7 +15,7 @@
 @font-face {
   font-family: 'Kumbh Sans';
   src: url('../fonts/KumbhSans-Regular.woff2') format('woff2'),
-      url('../fonts/KumbhSans-Regular.woff') format('woff');
+    url('../fonts/KumbhSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,7 @@
 @font-face {
   font-family: 'Kumbh Sans';
   src: url('../fonts/KumbhSans-Bold.woff2') format('woff2'),
-      url('../fonts/KumbhSans-Bold.woff') format('woff');
+    url('../fonts/KumbhSans-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -54,7 +54,7 @@ body {
   font-size: 16px;
   line-height: 26px;
   background-color: #fff;
-  color:var(--text-color);
+  color: var(--text-color);
 }
 
 img {
@@ -110,11 +110,97 @@ select:-webkit-autofill:focus {
   margin-right: auto;
 }
 
+/* LOGO */
+.logo {
+  display: inline-block;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo:active {
+  opacity: 0.6;
+}
+
+.logo__img {
+  display: block;
+  width: 138px;
+  height: 20px;
+  object-fit: contain;
+}
 
 /* MAIN CONTENT */
 .main-content {
   flex-grow: 1;
 }
+
+
+/* SITE-HEADER */
+
+.site-header {}
+
+.site-header__container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--divider-bg);
+}
+
+.site-header__logo {
+  margin-right: 56px;
+  flex-shrink: 0;
+}
+
+/* SITENAV */
+
+.sitenav__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sitenav__item {
+  position: relative;
+  padding-top: 41px;
+  padding-bottom: 45px;
+}
+
+.sitenav__item:not(:last-child) {
+  margin-right: 32px;
+}
+
+.sitenav__link {
+  font-size: 15px;
+  line-height: 26px;
+  color: var(--text-color);
+  display: block;
+  text-decoration: none;
+}
+
+.sitenav__link:hover {
+  color: var(--text-dark)
+}
+
+.sitenav__link:hover::after {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  content: '';
+  background-color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* RETINA BACKGROUNDS */
