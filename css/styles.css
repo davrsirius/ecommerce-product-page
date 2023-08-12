@@ -194,7 +194,43 @@ select:-webkit-autofill:focus {
 }
 
 
+/* SITE-HEADER__CART */
 
+
+.site-header__cart-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.site-header__cart-link:hover {
+  color: var(--text-dark);
+}
+
+.site-header__cart-link:active {
+  opacity: 0.6;
+}
+
+.site-header__cart-icon {
+  width: 22px;
+  height: 20px;
+}
+
+.site-header__product-count {
+  position: absolute;
+  top: -6px;
+  left: calc(100% - 13px);
+  padding: 1px 6px;
+  border-radius: 6.5px;
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 
 
 
