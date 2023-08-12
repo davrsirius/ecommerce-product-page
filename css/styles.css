@@ -135,22 +135,6 @@ select:-webkit-autofill:focus {
   flex-grow: 1;
 }
 
-
-/* SITE-HEADER */
-
-.site-header {}
-
-.site-header__container {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--divider-bg);
-}
-
-.site-header__logo {
-  margin-right: 56px;
-  flex-shrink: 0;
-}
-
 /* SITENAV */
 
 .sitenav__list {
@@ -191,6 +175,24 @@ select:-webkit-autofill:focus {
   content: '';
   background-color: var(--accent-color);
 }
+
+/* SITE-HEADER */
+
+.site-header__container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--divider-bg);
+}
+
+.site-header__sitenav {
+  margin-right: auto;
+}
+
+.site-header__logo {
+  margin-right: 56px;
+  flex-shrink: 0;
+}
+
 
 
 
