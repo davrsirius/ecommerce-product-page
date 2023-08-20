@@ -1,3 +1,9 @@
+const modifiers = {
+    imgShowcaseThumbnailActive: 'img-showcase__thumbnail--active'
+}
+
+
+// Site header cart link
 const elSiteHeaderCartLink = document.querySelector('.js-site-header__cart-link');
 const elSiteHeaderCartModal = document.querySelector('.site-header__cart-modal');
 
@@ -12,18 +18,28 @@ if (elSiteHeaderCartLink) {
 
 }
 
+// Img showcase
+const elImgShowcaseActiveImg = document.querySelector('.img-showcase__active-img');
+const elsImgShowcaseThumbnailButton = document.querySelectorAll('.js-img-showcase-thumbnail-button');
+const elsImgShowcaseThumbnail = document.querySelectorAll('.img-showcase__thumbnail');
 
 
-console.log(3 + 3);
+elsImgShowcaseThumbnailButton.forEach( function(elButton) {
+    elButton.addEventListener('click', function() {
+        // Remove active state from all buttons
+        elsImgShowcaseThumbnail.forEach(function(elImgThumbnail){
+            elImgThumbnail.classList.remove(modifiers.imgShowcaseThumbnailActive);
+        });
 
-console.log("3" + "3");
+        // Add active state to clicked button
+        elButton.parentElement.classList.add(modifiers.imgShowcaseThumbnailActive);
 
-console.log("3" + + 3);
+        // Update image src accordingly
+        elImgShowcaseActiveImg.src = elButton.dataset.imgShowcaseBig;
+        elImgShowcaseActiveImg.srcset = `${elButton.dataset.imgShowcaseBig} 1x, ${elButton.dataset.imgShowcaseRetina} 2x`;
+    
 
-console.log(3 + + "3");
-
-console.log(3 + 3 - 3);
-
-console.log("3" + "3" - "3");
+    });
+});
 
 
