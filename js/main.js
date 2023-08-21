@@ -1,5 +1,7 @@
-const modifiers = {
-    imgShowcaseThumbnailActive: 'img-showcase__thumbnail--active'
+let modifiers = {
+    imgShowcaseThumbnailActive: 'img-showcase__thumbnail--active',
+    siteHeaderCartModalOpen: 'site-header__cart-modal--open',
+    lightboxOpen: 'lightbox--open'
 }
 
 
@@ -12,7 +14,7 @@ if (elSiteHeaderCartLink) {
     elSiteHeaderCartLink.addEventListener('click', function (evt) {
         evt.preventDefault();
 
-        elSiteHeaderCartModal.classList.toggle('site-header__cart-modal--open');
+        elSiteHeaderCartModal.classList.toggle(modifiers.siteHeaderCartModalOpen);
 
     });
 
@@ -24,10 +26,10 @@ const elsImgShowcaseThumbnailButton = document.querySelectorAll('.js-img-showcas
 const elsImgShowcaseThumbnail = document.querySelectorAll('.img-showcase__thumbnail');
 
 
-elsImgShowcaseThumbnailButton.forEach( function(elButton) {
-    elButton.addEventListener('click', function() {
+elsImgShowcaseThumbnailButton.forEach(function (elButton) {
+    elButton.addEventListener('click', function () {
         // Remove active state from all buttons
-        elsImgShowcaseThumbnail.forEach(function(elImgThumbnail){
+        elsImgShowcaseThumbnail.forEach(function (elImgThumbnail) {
             elImgThumbnail.classList.remove(modifiers.imgShowcaseThumbnailActive);
         });
 
@@ -37,9 +39,25 @@ elsImgShowcaseThumbnailButton.forEach( function(elButton) {
         // Update image src accordingly
         elImgShowcaseActiveImg.src = elButton.dataset.imgShowcaseBig;
         elImgShowcaseActiveImg.srcset = `${elButton.dataset.imgShowcaseBig} 1x, ${elButton.dataset.imgShowcaseRetina} 2x`;
-    
+
 
     });
 });
 
+// LIGHBOX
+const elLightboxToggler = document.querySelector('.js-lightbox-toggler');
+const elLightBox = document.querySelector('.lightbox');
+const elLightboxClose = document.querySelector('.js-lightbox__close');
+
+if (elLightboxToggler) {
+    elLightboxToggler.addEventListener('click', function () {
+        elLightBox.classList.add(modifiers.lightboxOpen);
+    });
+};
+
+if (elLightboxClose) {
+    elLightboxClose.addEventListener('click', function () {
+        elLightBox.classList.remove(modifiers.lightboxOpen);
+    });
+};
 
